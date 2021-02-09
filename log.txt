@@ -1,0 +1,11 @@
+commit ed9c35eb223b8a051f12d7c93f2e6b42240b16f5
+Author: Olya <olyakorolko74@gmail.com>
+Date:   Tue Feb 9 21:55:09 2021 +0300
+
+    add task1/status.txt
+
+commit 1fbf9ef6726946c8294f95aa4549fd18fd469757
+Author: Olya <olyakorolko74@gmail.com>
+Date:   Tue Feb 9 21:53:32 2021 +0300
+
+    add .gitignore
