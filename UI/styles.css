@@ -1,0 +1,321 @@
+    body {
+        background-color: black;
+    }
+    
+    header {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: white;
+    }
+    
+    header ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    
+    header ul li {
+        margin-left: 10px;
+        margin-right: 10px;
+        display: inline-block;
+    }
+    
+    header ul #logo {
+        color: white;
+        text-decoration: none;
+        font-size: 50px;
+        font-weight: bold;
+    }
+    
+    header ul input[type=text] {
+        padding: 5px;
+        font-size: 17px;
+        border: 1px solid grey;
+        float: left;
+        width: 410px;
+        height: 18px;
+        background: #ffffff;
+    }
+    
+    header div {
+        padding: 5px;
+        float: left;
+        font-size: 19px;
+        width: 220px;
+        height: 18px;
+        padding-top: 5px;
+    }
+    
+    header ul button {
+        position: relative;
+        bottom: 6px;
+        background-color: #FF5C01;
+        color: #000000;
+        border-radius: 20px;
+        font-family: 'Times New Roman';
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        width: 193px;
+        height: 57px;
+    }
+    
+    header button a {
+        color: black;
+        text-decoration: none;
+    }
+    
+    section::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    aside {
+        overflow: hidden;
+        float: left;
+        width: 300px;
+        height: max-content;
+        padding-bottom: 7px;
+        margin-left: 100px;
+        border-radius: 20px;
+        background-color: white;
+    }
+    
+    #filter {
+        position: relative;
+        background-color: #FF5C01;
+        height: 40px;
+        padding-top: 10px;
+        text-align: center;
+        font-size: 25px;
+        border-bottom: solid;
+        border-width: 1px;
+        font-weight: bold;
+        overflow: hidden;
+    }
+    
+    aside #filter_form {
+        padding: 5px;
+    }
+    
+    aside #filter_form label,
+    input {
+        margin-top: 10px;
+    }
+    
+    aside #filter_form label {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    aside #filter_form #author_input {
+        display: block;
+        margin: 0 auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 200px;
+        height: 25px;
+    }
+    
+    aside #filter_form #dates input {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    
+    aside #filter_form ul {
+        margin: 0;
+        padding: 0;
+        margin-left: 10px;
+        list-style-type: none;
+        font-weight: normal;
+    }
+    
+    aside #filter_form ul label {
+        font-size: 15px;
+        font-weight: normal;
+    }
+    
+    aside #filter_form button {
+        display: block;
+        margin: 0 auto;
+        margin-top: 10px;
+        background-color: #FF5C01;
+        color: #000000;
+        border-radius: 10px;
+        font-family: 'Times New Roman';
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        width: 150px;
+        height: 47px;
+    }
+    
+    aside #filter_form button a {
+        color: black;
+        text-decoration: none;
+    }
+    
+    article {
+        position: relative;
+        float: right;
+        width: 940px;
+        height: max-content;
+        margin-right: 100px;
+        background-color: black;
+    }
+    
+    article #posts {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    
+    article #posts li {
+        background-color: white;
+        border-radius: 20px;
+        padding: 10px;
+        margin-bottom: 10px;
+        height: 100px;
+    }
+    
+    article #posts li #def_pic {
+        float: left;
+        position: relative;
+        border-radius: 7px;
+    }
+    
+    article #posts li #heart {
+        position: relative;
+        right: 25px;
+        top: 6px;
+    }
+    
+    article #posts li #item_name {
+        position: relative;
+        left: 10px;
+        bottom: 25px;
+        font-size: 27px;
+        font-weight: bold;
+    }
+    
+    article #posts li #price {
+        position: relative;
+        font-size: 35px;
+        font-weight: bold;
+        top: 13px;
+        left: 10px;
+    }
+    
+    article #posts li #seller_name {
+        color: gray;
+        position: relative;
+        left: 290px;
+        bottom: 11px;
+    }
+    
+    article #posts li #location {
+        color: gray;
+        position: relative;
+        float: right;
+        bottom: 111px;
+    }
+    
+    article #posts li #time {
+        color: gray;
+        position: relative;
+        float: right;
+        bottom: 29px;
+        left: 135px;
+    }
+    
+    article #posts li #hashtags_list {
+        width: 66%;
+        position: relative;
+        left: 110px;
+        bottom: 88px;
+    }
+    
+    article #posts li #hashtags_list li {
+        display: inline-block;
+        width: fit-content;
+        color: gray;
+        height: 7px;
+        font-size: 15px;
+        border-radius: 0;
+    }
+    
+    article #posts button {
+        display: none;
+        position: relative;
+        bottom: 112px;
+        left: 666px;
+        width: 120px;
+        height: 30px;
+        background-color: #FF5C01;
+        color: #000000;
+        border-radius: 7px;
+        font-family: 'Times New Roman';
+        font-size: 15px;
+        font-weight: bold;
+        border: solid;
+        border-width: 1px;
+        margin-left: 5px;
+    }
+    
+    article button a {
+        color: black;
+        text-decoration: none;
+    }
+    
+    article #posts #post1 button {
+        display: inline;
+    }
+    
+    article #show_more_button {
+        position: relative;
+        margin-left: 380px;
+        margin-top: 10px;
+        background-color: #FF5C01;
+        color: #000000;
+        border-radius: 10px;
+        font-family: 'Times New Roman';
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        width: 193px;
+        height: 57px;
+    }
+    
+    section::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    footer {
+        padding: 10px 30px 10px 30px;
+        color: white;
+    }
+    
+    #name {
+        position: relative;
+        margin-left: 20px;
+        margin-top: 10px;
+        font-size: 40px;
+        font-weight: bold;
+        float: left;
+    }
+    
+    #credentials {
+        position: relative;
+        margin-right: 20px;
+        margin-top: 15px;
+        font-size: 25px;
+        float: right;
+    }
