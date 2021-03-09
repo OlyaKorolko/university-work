@@ -4,22 +4,19 @@
     
     header {
         width: 100%;
-        padding-left: 50px;
-        padding-right: 50px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding: 10px 50px 10px 50px;
         color: white;
     }
     
-    header ul {
+    header ul,
+    article #posts {
         margin: 0;
         padding: 0;
         list-style-type: none;
     }
     
     header ul li {
-        margin-left: 10px;
-        margin-right: 10px;
+        margin: 0 10px 0 10px;
         display: inline-block;
     }
     
@@ -46,7 +43,6 @@
         font-size: 19px;
         width: 220px;
         height: 18px;
-        padding-top: 5px;
     }
     
     header ul button {
@@ -112,20 +108,17 @@
         font-weight: bold;
     }
     
-    aside #filter_form #author_input {
+    aside #filter_form #dates input,
+    #author_input {
         display: block;
         margin: 0 auto;
-        margin-top: 5px;
         margin-bottom: 5px;
-        width: 200px;
-        height: 25px;
+        margin-top: 5px;
     }
     
-    aside #filter_form #dates input {
-        display: block;
-        margin: 0 auto;
-        margin-bottom: 5px;
-        margin-top: 5px;
+    aside #filter_form #author_input {
+        width: 200px;
+        height: 25px;
     }
     
     aside #filter_form ul {
@@ -146,7 +139,7 @@
         margin: 0 auto;
         margin-top: 10px;
         background-color: #FF5C01;
-        color: #000000;
+        color: black;
         border-radius: 10px;
         font-family: 'Times New Roman';
         font-size: 20px;
@@ -168,12 +161,6 @@
         height: max-content;
         margin-right: 100px;
         background-color: black;
-    }
-    
-    article #posts {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
     }
     
     article #posts li {
@@ -212,23 +199,24 @@
         left: 10px;
     }
     
-    article #posts li #seller_name {
+    article #posts li #seller_name,
+    #location,
+    #time {
         color: gray;
         position: relative;
+    }
+    
+    article #posts li #seller_name {
         left: 290px;
         bottom: 11px;
     }
     
     article #posts li #location {
-        color: gray;
-        position: relative;
         float: right;
         bottom: 111px;
     }
     
     article #posts li #time {
-        color: gray;
-        position: relative;
         float: right;
         bottom: 29px;
         left: 135px;
@@ -290,12 +278,6 @@
         border: none;
         width: 193px;
         height: 57px;
-    }
-    
-    section::after {
-        content: "";
-        display: table;
-        clear: both;
     }
     
     footer {
