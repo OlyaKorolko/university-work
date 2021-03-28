@@ -196,7 +196,7 @@
         font-size: 35px;
         font-weight: bold;
         top: 13px;
-        left: 10px;
+        left: 15px;
     }
     
     article #posts li #seller_name,
@@ -207,42 +207,38 @@
     }
     
     article #posts li #seller_name {
-        left: 290px;
+        left: 280px;
         bottom: 11px;
     }
     
     article #posts li #location {
         float: right;
         bottom: 111px;
+        width: 170px;
+        text-align: right;
     }
     
     article #posts li #time {
         float: right;
         bottom: 29px;
-        left: 135px;
+        left: 170px;
+        width: 130px;
+        text-align: right;
     }
     
-    article #posts li #hashtags_list {
-        width: 66%;
+    article #posts #nothing_found {
         position: relative;
-        left: 110px;
-        bottom: 88px;
-    }
-    
-    article #posts li #hashtags_list li {
-        display: inline-block;
-        width: fit-content;
-        color: gray;
-        height: 7px;
-        font-size: 15px;
-        border-radius: 0;
+        top: 180px;
+        display: block;
+        margin: 0 auto;
     }
     
     article #posts button {
         display: none;
+        float: right;
         position: relative;
-        bottom: 112px;
-        left: 666px;
+        left: 300px;
+        bottom: 76px;
         width: 120px;
         height: 30px;
         background-color: #FF5C01;
@@ -256,13 +252,31 @@
         margin-left: 5px;
     }
     
+    article #posts li #hashtags_list {
+        width: fit-content;
+        float: left;
+        position: relative;
+        padding-left: 0px;
+        left: 163px;
+        bottom: 80px;
+    }
+    
+    article #posts li #hashtags_list li {
+        display: inline-block;
+        position: relative;
+        width: fit-content;
+        color: gray;
+        height: 5px;
+        padding-top: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        font-size: 15px;
+        border-radius: 0;
+    }
+    
     article button a {
         color: black;
         text-decoration: none;
-    }
-    
-    article #posts #post1 button {
-        display: inline;
     }
     
     article #show_more_button {
