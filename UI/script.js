@@ -76,12 +76,13 @@ class PostsHolder {
             post.hasOwnProperty('itemName') && typeof post.itemName === "string" && post.itemName.length < 150 &&
             post.hasOwnProperty('createdAt') && post.createdAt instanceof Date &&
             post.hasOwnProperty('author') && typeof post.author === "string" && post.author !== "" &&
-            post.hasOwnProperty('isLiked') && typeof post.isLiked === "boolean" &&
+            post.hasOwnProperty('photoLink') && typeof post.photoLink === 'string' &&
             post.hasOwnProperty('price') && typeof post.price === "number" &&
             post.hasOwnProperty('location') && typeof post.location === "string" &&
             post.hasOwnProperty('hashtags') && post.hashtags.length <= 5 && post.hashtags.length >= 1 &&
             post.hasOwnProperty('isOwned') && typeof post.isOwned === 'boolean') {
-            var temp_post = post;
+            var temp_post = {};
+            Object.assign(temp_post, post);
             temp_post = this._deleteToCheckPost(temp_post);
             if (Object.keys(temp_post).length) return false;
             return true;
@@ -93,20 +94,19 @@ class PostsHolder {
         delete post.itemName;
         delete post.createdAt;
         delete post.author;
-        delete post.isLiked;
+        delete post.photoLink;
         delete post.price;
         delete post.location;
         delete post.hashtags;
         delete post.isOwned;
         return post;
     }
-    addPost(post, isLiked, isOwned, isChosen) {
+    addPost(post) {
         if (this.validatePost(post)) {
-            post.id = this._posts.length + 1;
-            post.isLiked = isLiked;
-            post.isOwned = isOwned;
-            post.isChosen = isChosen;
             this._posts.push(post);
+            this._posts[this._posts.length - 1].id = this._posts.length;
+            this._posts[this._posts.length - 1].isLiked = false;
+            this._posts[this._posts.length - 1].isChosen = false;
             return true;
         }
         return false;
@@ -129,34 +129,28 @@ class PostsHolder {
             (post.hasOwnProperty('price') && typeof post.price === "number") ||
             (post.hasOwnProperty('hashtags') && post.hashtags.length <= 5 && post.hashtags.length >= 1) ||
             (post.hasOwnProperty('isChosen') && typeof post.isChosen === 'boolean') ||
-            post.hasOwnProperty('isLiked') && typeof post.isLiked === 'boolean') {
+            (post.hasOwnProperty('photoLink') && typeof post.photoLink === 'string')) {
             return true;
         } else return false;
     }
     removePost(id) {
-        if (typeof id === 'number') {
-            var k = this._posts.length;
-            var elem = this._posts.find(x => x.id === id);
-            if (typeof elem === "undefined" || this.validatePost(elem) === false) return false;
-            else {
-                for (var i = 0; i < this._posts.length; i++) {
-                    if (i >= k) this._posts[i] = this._posts[i + 1];
-                    else if (elem === this._posts[i]) {
-                        this._posts.splice(i, 1);
-                        k = i + 1;
-                    }
-                }
+        if (typeof id === 'number' && typeof this._posts.find(x => x.id === id) !== "undefined") {
+            for (var i = 0; i < this._posts.length; i++) {
+                if (this._posts.find(x => x.id === id) === this._posts[i])
+                    this._posts.splice(i, 1);
+                return true;
             }
-        }
+        } else return false;
     }
-    addAll(posts, isLiked, isChosen) {
+    addAll(posts) {
         var arrOfInvalid = [];
         for (var i = 0; i < posts.length; i++) {
             if (this.validatePost(posts[i])) {
-                posts[i].id = this._posts.length + 1;
-                posts[i].isLiked = isLiked[i];
-                posts[i].isChosen = isChosen[i];
-                this._posts.push(post);
+                this._posts.push(posts[i]);
+                this._posts[this._posts.length - 1].id = this._posts.length;
+                this._posts[this._posts.length - 1].isLiked = false;
+                this._posts[this._posts.length - 1].isChosen = false;
+
             } else arrOfInvalid.push(post);
         }
         return arrOfInvalid;
@@ -166,11 +160,17 @@ class PostsHolder {
     }
 
     constructor(posts) {
-        this._posts = posts;
+        this._posts = [];
+        var k = 0;
         for (var i = 0; i < posts.length; i++) {
-            this._posts[i].id = i + 1;
-            this._posts[i].isLiked = false;
-            this._posts[i].isChosen = false;
+            if (this.validatePost(posts[i])) {
+                this._posts[k] = {};
+                Object.assign(this._posts[k], posts[i]);
+                this._posts[k].id = k + 1;
+                this._posts[k].isLiked = false;
+                this._posts[k].isChosen = false;
+                k++;
+            }
         }
     }
     get posts() {
