@@ -102,8 +102,9 @@ class PostsHolder {
         return post;
     }
     addPost(post) {
+        this._posts[this._posts.length] = {};
         if (this.validatePost(post)) {
-            this._posts.push(post);
+            Object.assign(this._posts[this._posts.length - 1], post);
             this._posts[this._posts.length - 1].id = this._posts.length;
             this._posts[this._posts.length - 1].isLiked = false;
             this._posts[this._posts.length - 1].isChosen = false;
@@ -134,11 +135,13 @@ class PostsHolder {
         } else return false;
     }
     removePost(id) {
-        if (typeof id === 'number' && typeof this._posts.find(x => x.id === id) !== "undefined") {
+        var foundPost = this._posts.find(x => x.id === id);
+        if (typeof id === 'number' && typeof foundPost !== "undefined") {
             for (var i = 0; i < this._posts.length; i++) {
-                if (this._posts.find(x => x.id === id) === this._posts[i])
+                if (foundPost === this._posts[i]) {
                     this._posts.splice(i, 1);
-                return true;
+                    return true;
+                }
             }
         } else return false;
     }
